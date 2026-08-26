@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preparazione Prova Inglese — IIS Gregorio Mendel</title>
+<meta name="description" content="Grammatica, reading e scrittura email per la prova scritta di inglese — quarta IeFP">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { mendel: {
+    50:'#e8f5e9',100:'#c8e6c9',200:'#a5d6a7',300:'#81c784',400:'#4caf50',
+    500:'#43a047',600:'#388e3c',700:'#2e7d32',800:'#1b5e20',900:'#123c16'
+  } },
+  fontFamily: { sans: ['Inter','system-ui','Segoe UI','Roboto','sans-serif'] }
+} } }
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+body { font-family: 'Inter', system-ui, sans-serif; }
+.lead { font-size: 1.0625rem; line-height: 1.7; }
+:focus-visible { outline: 3px solid #4caf50; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { animation:none!important; transition:none!important; } }
+.tabbtn { transition: all .15s ease; }
+.tabbtn.active { background:#2e7d32; color:#fff; }
+.tabpanel { display:none; }
+.tabpanel.active { display:block; }
+.opt { cursor:pointer; }
+.opt input:checked + span { background:#e8f5e9; border-color:#2e7d32; font-weight:600; }
+.opt.correct span { background:#c8e6c9 !important; border-color:#2e7d32 !important; }
+.opt.wrong span { background:#fecaca !important; border-color:#dc2626 !important; }
+details > summary { cursor:pointer; list-style:none; }
+details > summary::-webkit-details-marker { display:none; }
+details[open] .chev { transform: rotate(90deg); }
+.chev { transition: transform .15s ease; }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+<header class="bg-gradient-to-br from-mendel-800 to-mendel-900 text-white sticky top-0 z-40 shadow-lg">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center gap-4">
+      <img src="logo-mendel.png" alt="Logo IIS Gregorio Mendel" class="w-14 h-14 rounded-full bg-white p-0.5 shrink-0 object-contain"
+           onerror="this.outerHTML='&lt;div class=&quot;w-14 h-14 rounded-full bg-white/15 border border-white/30 flex items-center justify-center font-black text-lg shrink-0&quot;&gt;GM&lt;/div&gt;'">
+      <div>
+        <div class="text-[11px] uppercase tracking-widest text-white/80 font-semibold">IIS Gregorio Mendel · Villa Cortese (MI)</div>
+        <h1 class="text-xl sm:text-2xl font-bold leading-tight">Preparazione Prova Scritta di Inglese</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="bg-white border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+    <span class="inline-block bg-mendel-700/10 text-mendel-700 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">Quarta IeFP · Esame Regione Lombardia</span>
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-mendel-900 mb-4">Grammatica, Reading e Scrittura Email</h2>
+    <p class="lead text-slate-600 max-w-2xl mx-auto">Ripasso mirato sugli argomenti grammaticali usciti nell'ultima prova scritta di inglese, con regole, esempi tradotti ed esercizi sul modello dell'esame.</p>
+  </div>
+</section>
+
+<!-- TAB NAV -->
+<div class="sticky top-[76px] z-30 bg-slate-50/95 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex gap-2 overflow-x-auto">
+    <button class="tabbtn active whitespace-nowrap px-4 py-2 rounded-lg border border-mendel-700 text-mendel-700 font-semibold text-sm flex items-center gap-2" data-tab="grammatica">
+      <i data-lucide="book-open" class="w-4 h-4"></i> Grammatica
+    </button>
+    <button class="tabbtn whitespace-nowrap px-4 py-2 rounded-lg border border-mendel-700 text-mendel-700 font-semibold text-sm flex items-center gap-2" data-tab="reading">
+      <i data-lucide="file-text" class="w-4 h-4"></i> Reading
+    </button>
+    <button class="tabbtn whitespace-nowrap px-4 py-2 rounded-lg border border-mendel-700 text-mendel-700 font-semibold text-sm flex items-center gap-2" data-tab="email">
+      <i data-lucide="mail" class="w-4 h-4"></i> Scrivi una mail
+    </button>
+  </div>
+</div>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+
+<!-- ======================= TAB 1: GRAMMATICA ======================= -->
+<div id="grammatica" class="tabpanel active">
+
+  <div class="bg-mendel-700/5 border-l-4 border-mendel-700 rounded-r-xl p-6 mb-10">
+    <p class="lead text-slate-700">Questi sono gli argomenti grammaticali che sono usciti nella prova scritta: preposizioni di tempo, quantificatori, comparativi, pronomi relativi, verbi modali di obbligo, phrasal verbs, forma affermativa/negativa "wish", periodo ipotetico e discorso indiretto. Clicca su ogni argomento per aprirlo.</p>
+  </div>
+
+  <div class="space-y-6" id="grammar-topics"></div>
+</div>
+
+<!-- ======================= TAB 2: READING ======================= -->
+<div id="reading" class="tabpanel">
+  <h3 class="text-2xl font-bold text-mendel-900 mb-2 flex items-center gap-2">
+    <i data-lucide="file-text" class="w-6 h-6 text-mendel-700"></i> Reading Comprehension
+  </h3>
+  <p class="text-slate-600 mb-8">Due esercizi sul modello della prova d'esame: un brano da completare (gap-fill a scelta multipla) e una serie di brevi messaggi con domande di comprensione.</p>
+
+  <div id="reading-content" class="space-y-12"></div>
+</div>
+
+<!-- ======================= TAB 3: SCRIVI UNA MAIL ======================= -->
+<div id="email" class="tabpanel">
+  <h3 class="text-2xl font-bold text-mendel-900 mb-6 flex items-center gap-2">
+    <i data-lucide="mail" class="w-6 h-6 text-mendel-700"></i> Scrivi una email / lettera di presentazione
+  </h3>
+
+  <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm mb-8">
+    <h4 class="font-bold text-mendel-900 mb-3 flex items-center gap-2"><i data-lucide="clipboard-list" class="w-5 h-5 text-mendel-600"></i> Traccia (come nella prova d'esame)</h4>
+    <p class="text-slate-700 lead mb-4">Hai visto un'offerta di lavoro come <strong>Junior Web Assistant</strong> presso una web agency e vuoi candidarti, perché la trovi un'ottima opportunità per iniziare la tua carriera. Scrivi una <strong>lettera di presentazione (cover letter)</strong> in inglese, di <strong>almeno 60 parole</strong>, in cui racconti:</p>
+    <ul class="list-disc list-inside text-slate-700 space-y-1 mb-2">
+      <li>che studi hai fatto;</li>
+      <li>quali esperienze lavorative o di tirocinio hai fatto nel settore;</li>
+      <li>quali competenze e punti di forza hai sviluppato;</li>
+      <li>perché ti candidi proprio per questa posizione.</li>
+    </ul>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h4 class="font-bold text-mendel-900 mb-3 flex items-center gap-2"><i data-lucide="list-checks" class="w-5 h-5 text-mendel-600"></i> Struttura della cover letter</h4>
+      <ol class="list-decimal list-inside text-slate-700 space-y-2 text-sm">
+        <li><strong>Saluto</strong> — "Dear Sir/Madam," o "Dear Mr/Ms [Cognome],"</li>
+        <li><strong>Apertura</strong> — perché scrivi (rispondi a un annuncio, ti candidi per...)</li>
+        <li><strong>Formazione</strong> — che studi hai fatto / stai facendo</li>
+        <li><strong>Esperienza</strong> — stage, lavori, progetti nel settore</li>
+        <li><strong>Competenze</strong> — punti di forza, soft skills, hard skills</li>
+        <li><strong>Motivazione</strong> — perché proprio questa azienda/posizione</li>
+        <li><strong>Chiusura</strong> — disponibilità per un colloquio + saluti formali</li>
+      </ol>
+    </div>
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h4 class="font-bold text-mendel-900 mb-3 flex items-center gap-2"><i data-lucide="sparkles" class="w-5 h-5 text-mendel-600"></i> Regole di stile</h4>
+      <ul class="list-disc list-inside text-slate-700 space-y-2 text-sm">
+        <li>Registro <strong>formale</strong>: niente contrazioni informali eccessive, no slang</li>
+        <li>Frasi brevi e chiare, un'idea per frase</li>
+        <li>Usa il <strong>Present Perfect</strong> per le esperienze passate rilevanti oggi ("I have worked...", "I have completed...")</li>
+        <li>Usa il <strong>Present Simple</strong> per fatti stabili ("I study...", "I am...")</li>
+        <li>Chiudi con formule standard: "I look forward to hearing from you." / "Yours faithfully," (se non conosci il nome) o "Yours sincerely," (se conosci il nome)</li>
+        <li>Controlla di aver risposto a <strong>tutti e 4 i punti</strong> richiesti</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm mb-10">
+    <h4 class="font-bold text-mendel-900 mb-3 flex items-center gap-2"><i data-lucide="type" class="w-5 h-5 text-mendel-600"></i> Frasi utili (con traduzione)</h4>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+      <div class="p-3 bg-mendel-50 rounded-lg"><p class="font-medium text-mendel-900">"I am writing to apply for the position of..."</p><p class="text-slate-600">Scrivo per candidarmi alla posizione di...</p></div>
+      <div class="p-3 bg-mendel-50 rounded-lg"><p class="font-medium text-mendel-900">"I have recently completed my studies in..."</p><p class="text-slate-600">Ho recentemente completato i miei studi in...</p></div>
+      <div class="p-3 bg-mendel-50 rounded-lg"><p class="font-medium text-mendel-900">"During my internship at..., I gained experience in..."</p><p class="text-slate-600">Durante il mio tirocinio presso..., ho maturato esperienza in...</p></div>
+      <div class="p-3 bg-mendel-50 rounded-lg"><p class="font-medium text-mendel-900">"I believe my skills in ... make me a suitable candidate."</p><p class="text-slate-600">Credo che le mie competenze in ... mi rendano un candidato adatto.</p></div>
+      <div class="p-3 bg-mendel-50 rounded-lg"><p class="font-medium text-mendel-900">"I am particularly interested in this role because..."</p><p class="text-slate-600">Sono particolarmente interessato a questo ruolo perché...</p></div>
+      <div class="p-3 bg-mendel-50 rounded-lg"><p class="font-medium text-mendel-900">"I would welcome the opportunity to discuss my application at an interview."</p><p class="text-slate-600">Sarei lieto/a di avere l'opportunità di discutere la mia candidatura in un colloquio.</p></div>
+    </div>
+  </div>
+
+  <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm mb-10">
+    <h4 class="font-bold text-mendel-900 mb-3 flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-mendel-600"></i> Modello annotato — Junior Web Assistant (72 parole)</h4>
+    <p class="text-sm text-slate-500 mb-4">Lo stesso identico testo di prima, ma con le parti colorate per farti vedere dove finisce l'apertura, dove si sviluppa il corpo e dove inizia la chiusura.</p>
+    <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 text-sm text-slate-700 leading-relaxed space-y-3">
+      <p><span class="bg-blue-100 border border-blue-300 rounded px-1">Dear Sir/Madam,</span></p>
+      <p>
+        <span class="bg-blue-100 border border-blue-300 rounded px-1">I am writing to apply for the position of Junior Web Assistant advertised on your website.</span>
+        <span class="bg-mendel-100 border border-mendel-400 rounded px-1">I have recently completed a technical diploma with a focus on IT and web communication.</span>
+        <span class="bg-mendel-100 border border-mendel-400 rounded px-1">During my work experience at a small digital agency, I learned how to update websites, manage social media content and support the design team with everyday tasks.</span>
+      </p>
+      <p>
+        <span class="bg-mendel-100 border border-mendel-400 rounded px-1">I consider myself a reliable and creative person, and I have developed good teamwork and problem-solving skills.</span>
+        <span class="bg-amber-100 border border-amber-300 rounded px-1">I am applying for this position because I would like to start my career in a dynamic and creative environment like yours.</span>
+      </p>
+      <p><span class="bg-amber-100 border border-amber-300 rounded px-1">I look forward to hearing from you.</span></p>
+      <p><span class="bg-amber-100 border border-amber-300 rounded px-1">Yours faithfully,<br>[Nome Cognome]</span></p>
+    </div>
+    <div class="flex flex-wrap gap-4 mt-4 text-xs">
+      <span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-blue-100 border border-blue-300 inline-block"></span> Opening (saluto + motivo della lettera)</span>
+      <span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-mendel-100 border border-mendel-400 inline-block"></span> Body (studi, esperienza, competenze)</span>
+      <span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-amber-100 border border-amber-300 inline-block"></span> Closing (motivazione finale + saluti formali)</span>
+    </div>
+  </div>
+
+  <h4 class="text-xl font-bold text-mendel-900 mb-4 flex items-center gap-2"><i data-lucide="sprout" class="w-5 h-5 text-mendel-700"></i> Modelli per un istituto agrario</h4>
+  <p class="text-slate-600 text-sm mb-6">Tre esempi con lunghezza corretta per l'esame (tra 70 e 80 parole), pensati per candidature in ambito agricolo/agroalimentare — utili come traccia per il tuo istituto. Anche qui le parti sono colorate: <span class="bg-blue-100 border border-blue-300 rounded px-1">opening</span> · <span class="bg-mendel-100 border border-mendel-400 rounded px-1">body</span> · <span class="bg-amber-100 border border-amber-300 rounded px-1">closing</span>.</p>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10" id="agri-models"></div>
+
+  <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm mb-10">
+    <h4 class="font-bold text-mendel-900 mb-3 flex items-center gap-2"><i data-lucide="file-edit" class="w-5 h-5 text-mendel-600"></i> Modello "da riempire" (schema generico)</h4>
+    <p class="text-sm text-slate-500 mb-3">Uno schema con spazi vuoti da completare tu, utile per allenarti a costruire una cover letter da zero seguendo sempre la stessa struttura in tre parti.</p>
+    <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 text-sm text-slate-700 leading-relaxed space-y-3">
+      <p><span class="bg-blue-100 border border-blue-300 rounded px-1">Dear [Recipient's Name],<br>I am writing to express my interest in the [position/role] at [Company Name].</span></p>
+      <p><span class="bg-mendel-100 border border-mendel-400 rounded px-1">Currently pursuing vocational training in [Field], I have gained hands-on experience in [specific skills related to the role] through internships and work placements, where I honed my skills in [relevant tasks or activities]. I have developed strong competencies in [key skills or strengths].</span></p>
+      <p><span class="bg-amber-100 border border-amber-300 rounded px-1">I am particularly drawn to [Company Name] because of [specific reason]. Thank you for considering my application. I look forward to the opportunity to discuss how my skills align with [Company Name]'s needs.<br>Sincerely,<br>[Your Name]</span></p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <details class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <summary class="font-bold text-mendel-900 flex items-center justify-between gap-2">
+        <span class="flex items-center gap-2"><i data-lucide="wrench" class="w-5 h-5 text-mendel-700"></i> Competenze utili (skills) — agrario</span>
+        <i data-lucide="chevron-right" class="chev w-5 h-5 text-mendel-700 shrink-0"></i>
+      </summary>
+      <ul class="list-disc list-inside text-slate-700 text-sm mt-3 space-y-1">
+        <li>Strong understanding of agricultural principles and practices</li>
+        <li>Proficient in operating agricultural machinery and equipment</li>
+        <li>Excellent problem-solving abilities in agricultural settings</li>
+        <li>Effective communication skills for collaborating with team members</li>
+        <li>Ability to adapt to changing environmental conditions</li>
+        <li>Attention to detail in crop monitoring and pest control</li>
+        <li>Time management skills for efficient farm operations</li>
+        <li>Knowledge of sustainable farming techniques</li>
+        <li>Dedication to animal welfare and ethical livestock management</li>
+      </ul>
+    </details>
+    <details class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <summary class="font-bold text-mendel-900 flex items-center justify-between gap-2">
+        <span class="flex items-center gap-2"><i data-lucide="tractor" class="w-5 h-5 text-mendel-700"></i> Attività svolte (relevant tasks) — agrario</span>
+        <i data-lucide="chevron-right" class="chev w-5 h-5 text-mendel-700 shrink-0"></i>
+      </summary>
+      <ul class="list-disc list-inside text-slate-700 text-sm mt-3 space-y-1">
+        <li>Preparing soil for planting or transplanting crops</li>
+        <li>Monitoring plant growth and applying fertilizers</li>
+        <li>Managing irrigation operations to ensure crop health</li>
+        <li>Controlling pest infestations and plant diseases</li>
+        <li>Harvesting and storing agricultural products</li>
+        <li>Operating tractors, plows and harvesters</li>
+        <li>Maintenance and repair of agricultural equipment</li>
+        <li>Livestock management: feeding, care and health monitoring</li>
+        <li>Agricultural waste management and sustainability practices</li>
+      </ul>
+    </details>
+  </div>
+
+</div>
+
+<button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 right-6 z-50 bg-mendel-700 hover:bg-mendel-800 text-white p-3 rounded-full shadow-lg hidden items-center justify-center" aria-label="Torna su">
+  <i data-lucide="arrow-up" class="w-5 h-5"></i>
+</button>
+
+</main>
+
+<footer class="bg-mendel-900 text-white/80 mt-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex flex-col md:flex-row justify-between gap-6 items-start">
+      <div>
+        <div class="font-bold text-white text-base mb-1">Istituto di Istruzione Superiore &quot;Gregorio Mendel&quot;</div>
+        <div class="text-sm">Via Ferrazzi, 15 — 20035 Villa Cortese (MI)</div>
+        <a href="https://agrariomendel.edu.it/" class="text-sm text-mendel-300 hover:underline inline-flex items-center gap-1 mt-2">
+          <i data-lucide="globe" class="w-4 h-4"></i> agrariomendel.edu.it
+        </a>
+      </div>
+      <div class="text-xs text-white/60 md:text-right">
+        Pagina creata da Team Digitale<br>per l'IIS Mendel di Villa Cortese (MI)
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+lucide.createIcons();
+
+/* ---------- TAB SWITCHING ---------- */
+document.querySelectorAll('.tabbtn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tabbtn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tabpanel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+
+/* ---------- TORNA SU ---------- */
+const toTop = document.getElementById('toTop');
+window.addEventListener('scroll', ()=>{
+  if(window.scrollY > 400){ toTop.classList.remove('hidden'); toTop.classList.add('flex'); }
+  else { toTop.classList.add('hidden'); toTop.classList.remove('flex'); }
+});
+
+/* ---------- HELPER: build a multiple choice exercise ---------- */
+function mcQuestion(qid, promptHtml, options, correctIndex){
+  let optsHtml = options.map((opt,i)=>`
+    <label class="opt flex items-center gap-3 p-2 rounded-lg border border-slate-200 hover:bg-slate-50" data-correct="${i===correctIndex}">
+      <input type="radio" name="${qid}" class="accent-mendel-700" onclick="checkAnswer(this)">
+      <span class="px-2 py-1 rounded">${opt}</span>
+    </label>`).join('');
+  return `<div class="mb-4"><p class="text-slate-800 mb-2">${promptHtml}</p><div class="space-y-1">${optsHtml}</div></div>`;
+}
+function checkAnswer(input){
+  const group = document.getElementsByName(input.name);
+  group.forEach(radio=>{
+    const label = radio.closest('.opt');
+    label.classList.remove('correct','wrong');
+    if(radio.checked){
+      label.classList.add(label.dataset.correct === 'true' ? 'correct' : 'wrong');
+    }
+  });
+}
+
+/* =========================================================
+   GRAMMAR TOPICS DATA
+   ========================================================= */
+const topics = [
+{
+  icon:'clock',
+  title:'1. Preposizioni di tempo: since / for / from...to',
+  rule:`<ul class="list-disc list-inside space-y-1">
+    <li><strong>SINCE</strong> + un punto preciso nel tempo (data, evento, momento): "since 2020", "since I arrived"</li>
+    <li><strong>FOR</strong> + una durata: "for a month", "for two years"</li>
+    <li><strong>FROM ... TO</strong> per indicare un intervallo con inizio e fine: "from 9 a.m. to 5 p.m."</li>
+  </ul>`,
+  examples:[
+    ['I have lived here since 2015.','Vivo qui dal 2015.'],
+    ['She has worked at the agency for three months.','Lavora in agenzia da tre mesi.'],
+    ['We work from Monday to Friday.','Lavoriamo da lunedì a venerdì.']
+  ],
+  exercises:[
+    ['It\'s been a month ... I arrived, and I already feel at home.',['when','from','since','by'],2],
+    ['I have known her ... I was a child.',['for','since','from','by'],1],
+    ['He studied English ... two years before moving to London.',['since','from','for','by'],2]
+  ]
+},
+{
+  icon:'layers',
+  title:'2. Quantificatori: a few / a lot of / lots of / a lot',
+  rule:`<ul class="list-disc list-inside space-y-1">
+    <li><strong>A FEW</strong> + nome plurale numerabile = "alcuni/e" (quantità piccola ma positiva)</li>
+    <li><strong>A LOT OF / LOTS OF</strong> + nome (numerabile o non numerabile) = "molti/molte" — si usano SEMPRE seguiti da un sostantivo</li>
+    <li><strong>A LOT</strong> (senza "of") si usa da solo, senza sostantivo dopo, di solito a fine frase: "I like it a lot."</li>
+    <li>Attenzione: "lots" da solo (senza "of" e senza sostantivo) non è corretto in questo contesto</li>
+  </ul>`,
+  examples:[
+    ['There are a few students in the classroom.','Ci sono alcuni studenti in classe.'],
+    ['The agency has lots of young designers.','L\'agenzia ha molti giovani designer.'],
+    ['I travel a lot for work.','Viaggio molto per lavoro.']
+  ],
+  exercises:[
+    ['It\'s an inspiring place with ... young designers and great energy.',['few of','lots of','lots','a lot'],1],
+    ['We don\'t have ... time before the meeting.',['a few','lots','a lot','many'],2],
+    ['There are only ... apples left in the fridge.',['a few','a lot','lots','much'],0]
+  ]
+},
+{
+  icon:'trending-up',
+  title:'3. Comparativi',
+  rule:`<ul class="list-disc list-inside space-y-1">
+    <li>Aggettivi brevi (1 sillaba): <strong>-er</strong> → "fast → faster"</li>
+    <li>Aggettivi lunghi (2+ sillabe): <strong>more + aggettivo</strong> → "more interesting"</li>
+    <li>Struttura del paragone: "A + verbo + comparativo + than + B"</li>
+    <li>Forma negativa equivalente: "not as ... as" = "non tanto quanto"</li>
+  </ul>`,
+  examples:[
+    ['Our competitor is releasing products faster than us.','Il nostro concorrente lancia prodotti più velocemente di noi.'],
+    ['We aren\'t releasing products as fast as our competitor.','Non lanciamo prodotti così velocemente come il nostro concorrente. (stesso significato della frase sopra)'],
+    ['This exercise is more difficult than the previous one.','Questo esercizio è più difficile del precedente.']
+  ],
+  exercises:[
+    ['Quale frase ha lo stesso significato di "Our competitor is releasing products faster than us"?',
+      ['We are releasing products as fast as our competitor','Our competitor isn\'t releasing products as fast as us','We aren\'t releasing products as fast as our competitor','Us are releasing products slower than our competitor'],2],
+    ['This laptop is ... than mine.',['fast','faster','more fast','fastest'],1],
+    ['She is ... intelligent than her brother.',['more','-er','most','much'],0]
+  ]
+},
+{
+  icon:'link-2',
+  title:'4. Pronomi relativi: which / who / that / whom',
+  rule:`<ul class="list-disc list-inside space-y-1">
+    <li><strong>WHO</strong> → persone (soggetto)</li>
+    <li><strong>WHOM</strong> → persone (oggetto, forma formale)</li>
+    <li><strong>WHICH</strong> → cose/animali; obbligatorio nelle frasi relative <em>non determinative</em>, cioè quelle tra virgole che aggiungono un'informazione in più</li>
+    <li><strong>THAT</strong> → persone o cose, ma SOLO nelle relative determinative (senza virgole), mai dopo virgola</li>
+  </ul>`,
+  examples:[
+    ['The new software, which was developed in London, is very popular.','Il nuovo software, che è stato sviluppato a Londra, è molto popolare.'],
+    ['The man who called you is my colleague.','L\'uomo che ti ha chiamato è mio collega.'],
+    ['This is the book that I told you about.','Questo è il libro di cui ti ho parlato.']
+  ],
+  exercises:[
+    ['The new software, ... was developed in London, is currently the most downloaded app.',['which','that','who','whom'],0],
+    ['The teacher ... explained the lesson is very patient.',['which','who','whom','whose'],1],
+    ['This is the car ... I bought last year.',['who','whom','that','whose'],2]
+  ]
+},
+{
+  icon:'shield-check',
+  title:'5. Obbligo, divieto e assenza di obbligo: must / mustn\'t / have to / don\'t have to / needn\'t',
+  rule:`<ul class="list-disc list-inside space-y-1">
+    <li><strong>MUST / HAVE TO</strong> = obbligo ("devo")</li>
+    <li><strong>MUSTN'T</strong> = divieto ("non devo, è vietato")</li>
+    <li><strong>DON'T HAVE TO / NEEDN'T</strong> = assenza di obbligo ("non è necessario, ma posso farlo se voglio") — attenzione: NON significa divieto!</li>
+    <li>Forma scorretta da evitare: <em>"needn't to"</em> — dopo "needn't" il verbo va sempre alla forma base, senza "to"</li>
+  </ul>`,
+  examples:[
+    ['You mustn\'t use your phone during the exam.','Non devi (è vietato) usare il telefono durante l\'esame.'],
+    ['You don\'t have to finish today; tomorrow is fine.','Non è necessario finire oggi; va bene anche domani.'],
+    ['You needn\'t bring your laptop, we have spare ones.','Non è necessario che tu porti il portatile, ne abbiamo di riserva.']
+  ],
+  exercises:[
+    ['You ... finish the report today if you are too tired; tomorrow morning is fine.',['don\'t have to','mustn\'t','needn\'t to','haven\'t to'],0],
+    ['Students ... cheat during the test — it\'s strictly forbidden.',['don\'t have to','mustn\'t','needn\'t','haven\'t to'],1],
+    ['You ... to bring your own laptop, the school provides one.',['must','needn\'t','mustn\'t','have'],1]
+  ]
+},
+{
+  icon:'repeat',
+  title:'6. Discorso indiretto (Reported Speech)',
+  rule:`<ul class="list-disc list-inside space-y-1">
+    <li>Quando si riporta un discorso diretto, il tempo verbale "arretra" di un passo (backshift): <strong>will → would</strong>, <strong>present simple → past simple</strong>, ecc.</li>
+    <li>Nel periodo ipotetico di tipo 1 riportato ("if you don't..., you will..."), il presente diventa past simple e "will" diventa "would"</li>
+    <li>I pronomi personali cambiano in base a chi parla: "you" può diventare "I"</li>
+  </ul>`,
+  examples:[
+    ['Sarah said: "If you don\'t backup your files, you will lose them."','Sarah ha detto: "Se non fai il backup dei file, li perderai."'],
+    ['→ Sarah said (that) I would lose them if I didn\'t backup my files.','→ Sarah ha detto che li avrei persi se non avessi fatto il backup dei file.'],
+    ['He said: "I am tired."→ He said (that) he was tired.','Ha detto che era stanco.']
+  ],
+  exercises:[
+    ['Sarah said: "If you don\'t backup your files, you will lose them." → in discorso indiretto:',
+      ['Sarah said I lose them if I didn\'t backup my files','Sarah said I would lose them if I didn\'t backup my files','Sarah said I would lose them if I backed up my files','Sarah said I will lose them if I didn\'t backup my files'],1],
+    ['"I am happy," she said. → She said (that) ...',['she is happy','she was happy','she has been happy','she will be happy'],1],
+    ['"We will call you tomorrow," they said. → They said (that) ...',['they will call us the next day','they would call us the next day','they call us the next day','they called us the next day'],1]
+  ]
+},
+{
+  icon:'puzzle',
+  title:'7. Phrasal verbs ed espressioni idiomatiche',
+  rule:`<ul class="list-disc list-inside space-y-1">
+    <li><strong>run out of (something)</strong> = esaurire, finire qualcosa</li>
+    <li><strong>on time</strong> = puntuale, in orario preciso (non confondere con "in time" = in tempo utile, giusto in tempo)</li>
+    <li>Molti phrasal verbs vanno imparati "a memoria" come blocco unico: attenzione alle preposizioni!</li>
+  </ul>`,
+  examples:[
+    ['The presentation had to stop because the speaker ran out of time.','La presentazione si è dovuta fermare perché il relatore ha finito il tempo a disposizione.'],
+    ['The train arrived on time.','Il treno è arrivato puntuale.'],
+    ['We arrived just in time to catch the flight.','Siamo arrivati appena in tempo per prendere il volo.']
+  ],
+  exercises:[
+    ['The presentation had to stop because the speaker ... time.',['raced out of','ran into','ran out of','raced over'],2],
+    ['I\'m afraid you won\'t arrive ... time for boarding.',['at','in','the','on'],3],
+    ['We need to update this system, ... we\'d rather do it next week. (stesso significato)',
+      ['Updating this system is a priority, though we decided not to do it for the moment','If this system hadn\'t needed updating, we would have done it next week','This system needs updating, although we\'d rather do it next week','We should update this system as soon as we feel like doing it'],2]
+  ]
+},
+{
+  icon:'message-square',
+  title:'8. Comprensione di messaggi brevi (avvisi, chat, alert)',
+  rule:`<ul class="list-disc list-inside space-y-1">
+    <li>Nei messaggi brevi (avvisi in ufficio, chat aziendali, alert di app) è fondamentale individuare: <strong>chi</strong> scrive, <strong>cosa</strong> chiede/comunica, ed <strong>entro quando</strong>.</li>
+    <li>Attenzione alle espressioni di tempo (by 2 PM, on Tuesday and Wednesday) e ai verbi modali che indicano richieste (please remember to, make sure).</li>
+    <li>Non farsi ingannare dai distrattori: leggere sempre l'intero messaggio prima di rispondere.</li>
+  </ul>`,
+  examples:[
+    ['Please remember to submit your expense reports before Friday.','Ricordatevi di consegnare le note spese prima di venerdì.'],
+    ['The server is currently down; it should be fixed by 2 PM.','Il server è momentaneamente fuori servizio; dovrebbe essere sistemato entro le 14.'],
+    ['The room will only be available for small groups on Tuesday and Wednesday.','La sala sarà disponibile solo per piccoli gruppi martedì e mercoledì.']
+  ],
+  exercises:[
+    ['"FYI: The main server is currently down. Tech support has been contacted and they expect to fix the issue by 2 PM." Che cosa significa?',
+      ['The server will be off for the whole week','The server is working slowly','The problem has already been solved','There\'s an issue but it is being fixed and should be resolved soon'],3],
+    ['"Your room check-in is delayed... The new check-in time is 16:00 instead of 14:00." Che cosa comunica l\'alert?',
+      ['You can access your room later than planned','Your reservation has been cancelled','Guests must arrive 2 hours early','The issue will improve tomorrow'],0],
+    ['"Please remember to submit your expense reports before our next meeting on Friday." Che cosa chiede il manager?',
+      ['Studiare le regole del budget prima della riunione','Portare il laptop alla riunione','Consegnare le note spese e caricare i file per la revisione','Preparare una presentazione sulle spese'],2]
+  ]
+}
+];
+
+const container = document.getElementById('grammar-topics');
+topics.forEach((t,idx)=>{
+  const exHtml = t.exercises.map((ex,i)=>mcQuestion(`t${idx}-q${i}`, ex[0], ex[1], ex[2])).join('');
+  const exsHtml = t.examples.map(e=>`
+    <div class="p-3 bg-mendel-50 rounded-lg mb-2">
+      <p class="font-medium text-mendel-900">${e[0]}</p>
+      <p class="text-slate-600 text-sm">${e[1]}</p>
+    </div>`).join('');
+  const card = document.createElement('details');
+  card.className = 'bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden';
+  card.innerHTML = `
+    <summary class="p-5 flex items-center justify-between gap-4">
+      <span class="font-bold text-mendel-900 flex items-center gap-2"><i data-lucide="${t.icon}" class="w-5 h-5 text-mendel-700"></i> ${t.title}</span>
+      <i data-lucide="chevron-right" class="chev w-5 h-5 text-mendel-700 shrink-0"></i>
+    </summary>
+    <div class="px-5 pb-6 border-t border-slate-100 pt-5">
+      <h5 class="font-bold text-mendel-800 mb-2 text-sm uppercase tracking-wide">Regola</h5>
+      <div class="text-slate-700 text-sm mb-5">${t.rule}</div>
+      <h5 class="font-bold text-mendel-800 mb-2 text-sm uppercase tracking-wide">Esempi</h5>
+      <div class="mb-5">${exsHtml}</div>
+      <h5 class="font-bold text-mendel-800 mb-2 text-sm uppercase tracking-wide">Esercizi</h5>
+      ${exHtml}
+    </div>`;
+  container.appendChild(card);
+  lucide.createIcons();
+});
+
+/* =========================================================
+   READING DATA
+   ========================================================= */
+const readingHtml = `
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+  <h4 class="font-bold text-mendel-900 mb-1 flex items-center gap-2"><i data-lucide="pen-line" class="w-5 h-5 text-mendel-700"></i> Esercizio 1 — Completa il brano</h4>
+  <p class="text-sm text-slate-500 mb-4">Scegli per ogni spazio la parola corretta tra quelle proposte.</p>
+  <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 text-slate-700 leading-relaxed mb-6" id="reading1-text"></div>
+  <div id="reading1-questions"></div>
+</div>
+
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+  <h4 class="font-bold text-mendel-900 mb-1 flex items-center gap-2"><i data-lucide="message-circle" class="w-5 h-5 text-mendel-700"></i> Esercizio 2 — Messaggi brevi</h4>
+  <p class="text-sm text-slate-500 mb-4">Leggi ogni messaggio e scegli l'alternativa che ne spiega correttamente il significato.</p>
+  <div id="reading2-questions"></div>
+</div>
+`;
+document.getElementById('reading-content').innerHTML = readingHtml;
+
+/* Reading 1: gap-fill passage about work experience abroad */
+document.getElementById('reading1-text').innerHTML = `
+Subject: My Work Experience in Dublin<br><br>
+Hi Laura,<br><br>
+I hope you are well! I wanted to update you on my traineeship here in Dublin. I ...[1]... here for three weeks now, and I'm really enjoying it. I'm working at a small marketing agency in the city centre with ...[2]... friendly and helpful colleagues.<br><br>
+At ...[3]..., I found it hard to keep up with the speed of conversations, but everyone is patient with me. I work ...[4]... 8:30 to 4:30, and every day is different: I help write social media posts, organise events, and I've even ...[5]... to use new design software.<br><br>
+This experience is teaching me a lot ...[6]... teamwork and communication, and it's helping me improve my English ...[7]... every day.
+`;
+
+const reading1 = [
+  ['I ...[1]... here for three weeks now.',['am','have been','was','were'],1],
+  ['...[2]... friendly and helpful colleagues.',['few of','lots of','lots','much'],1],
+  ['At ...[3]..., I found it hard to keep up.',['end','first','beginning','Monday'],1],
+  ['I work ...[4]... 8:30 to 4:30.',['off','by','for','from'],3],
+  ['I\'ve even ...[5]... to use new design software.',['pretend','known','taught','learned'],3],
+  ['This is teaching me a lot ...[6]... teamwork.',['about','of','for','with'],0],
+  ['It\'s helping me improve my English ...[7]... every day.',['some','little','more','a lot'],2]
+];
+document.getElementById('reading1-questions').innerHTML = reading1.map((ex,i)=>mcQuestion(`r1-q${i}`, ex[0], ex[1], ex[2])).join('');
+
+/* Reading 2: short workplace messages */
+const reading2msgs = [
+  {
+    text:'"Reminder: all staff must complete the online safety course by Friday. Those who don\'t finish it in time won\'t be able to access the workshop next week."',
+    q:'Che cosa significa questo messaggio?',
+    opts:['Il corso di sicurezza è facoltativo','Chi non completa il corso entro venerdì non potrà accedere al laboratorio','Il laboratorio è stato cancellato','Il corso durerà tutta la prossima settimana'],
+    correct:1
+  },
+  {
+    text:'"Heads up: the printer on the second floor is out of order. Please use the one in the reception area until further notice."',
+    q:'Che cosa comunica il messaggio?',
+    opts:['Entrambe le stampanti non funzionano','La stampante del secondo piano è rotta, usarne un\'altra','La stampante è stata sostituita','Non si può più stampare in ufficio'],
+    correct:1
+  },
+  {
+    text:'"Notice: The cafeteria will close early today at 2 PM for a private event. Normal hours will resume tomorrow."',
+    q:'Che cosa significa l\'avviso?',
+    opts:['La mensa chiude definitivamente','Oggi la mensa chiude prima del solito, domani riapre come sempre','La mensa sarà chiusa anche domani','L\'evento privato si terrà domani'],
+    correct:1
+  }
+];
+document.getElementById('reading2-questions').innerHTML = reading2msgs.map((m,i)=>`
+  <div class="mb-6 p-4 bg-slate-50 border border-slate-200 rounded-lg">
+    <p class="italic text-slate-700 mb-3">${m.text}</p>
+    ${mcQuestion(`r2-q${i}`, m.q, m.opts, m.correct)}
+  </div>`).join('');
+
+/* =========================================================
+   AGRICULTURAL COVER LETTER MODELS (from uploaded examples)
+   ========================================================= */
+const agriModels = [
+  {
+    title:'Esempio 1 — Stage in un\'azienda biologica',
+    words:77,
+    opening:`Dear [Hiring Manager\'s Name],<br>I am a fourth-year student in the <strong>IeFP Diploma in Agriculture, Agri-food, and Agro-industry</strong>.`,
+    body:`I have gained knowledge in crop cultivation, livestock management, and sustainability. During my internship at [Company Name], I improved my skills in organic farming, soil management, and crop rotation.`,
+    closing:`Your company's commitment to sustainable agriculture interests me, and I would love to contribute.<br>I look forward to discussing my application. Thank you for your time.<br>Best regards,<br>[Your Name]`
+  },
+  {
+    title:'Esempio 2 — Posizione in una vigna',
+    words:73,
+    opening:`Dear [Hiring Manager\'s Name],<br>I am in my fourth year of the <strong>IeFP Diploma in Agriculture</strong>, specializing in viticulture and enology.`,
+    body:`I completed a training experience at [Previous Company Name], assisting in vineyard maintenance, harvesting, and winemaking.`,
+    closing:`Your company's reputation in sustainable viticulture inspires me. I believe my skills and passion make me a great fit.<br>I would love to discuss my application further. Thank you for your consideration.<br>Best regards,<br>[Your Name]`
+  },
+  {
+    title:'Esempio 3 — Azienda di macchinari agricoli',
+    words:72,
+    opening:`Dear [Hiring Manager\'s Name],<br>I am completing my fourth year in the <strong>IeFP Diploma in Agriculture</strong>, specializing in agricultural machinery.`,
+    body:`My internship at [Previous Company Name] provided hands-on experience in operating and maintaining tractors, irrigation systems, and harvesting equipment.`,
+    closing:`I admire [Company Name]'s innovation in agricultural technology and would love to contribute my skills.<br>I appreciate your time and consideration. Looking forward to an opportunity to discuss further.<br>Best regards,<br>[Your Name]`
+  }
+];
+
+document.getElementById('agri-models').innerHTML = agriModels.map(m=>`
+  <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h5 class="font-bold text-mendel-900 mb-1 text-sm">${m.title}</h5>
+    <p class="text-xs text-slate-500 mb-3">${m.words} parole</p>
+    <div class="text-sm text-slate-700 leading-relaxed space-y-2">
+      <p><span class="bg-blue-100 border border-blue-300 rounded px-1">${m.opening}</span></p>
+      <p><span class="bg-mendel-100 border border-mendel-400 rounded px-1">${m.body}</span></p>
+      <p><span class="bg-amber-100 border border-amber-300 rounded px-1">${m.closing}</span></p>
+    </div>
+  </div>`).join('');
+
+lucide.createIcons();
+</script>
+</body>
+</html>
